@@ -2,6 +2,8 @@
 
 This guide will show you how to transform a Raspberry Pi Pico into a custom game controller compatible with the Nintendo Switch using the open-source firmware **GP2040-CE**.
 
+**Keep in mind the controller only works with Nintendo switch in docked mode!**
+
 ## Key Benefits
 
 - **No programming required**
@@ -145,6 +147,7 @@ Simply connect the wires to the headers and screw them down.
 ![Testing the Controller](img/test/test1.jpg)
 
 ---
+
 
 
 With this setup, you’ll have a fully functional Nintendo Switch controller that you can easily customize to fit your needs!
