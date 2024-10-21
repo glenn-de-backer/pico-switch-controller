@@ -132,7 +132,7 @@ Simply connect the wires to the headers and screw them down.
 
 4. Click **Console** to test the configuration.
 
-![Step 4 - Console Mode](img/config/step4.v)
+![Step 4 - Console Mode](img/config/step4.jpg)
 
 ---
 
