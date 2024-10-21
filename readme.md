@@ -4,6 +4,12 @@ This guide will show you how to transform a Raspberry Pi Pico into a custom game
 
 **Keep in mind the controller only works with Nintendo switch in docked mode!**
 
+## Video
+
+  There is a step by step youtube video available at [https://www.youtube.com/watch?v=Jl17h7Sx4sw](https://www.youtube.com/watch?v=Jl17h7Sx4sw)
+
+![Firmware](img/youtube_screenshot.jpg)
+
 ## Key Benefits
 
 - **No programming required**
