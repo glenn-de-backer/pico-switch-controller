@@ -16,20 +16,17 @@ This guide will show you how to transform a Raspberry Pi Pico into a custom game
 
 ---
 
-## BOM (+/- €15) 
+## Bill of Materials (~€15)
 
-* Raspberry Pi Pico (RP2040) 
-  * If you want to be sure buy the official one
-  * Look for the one with headers if available (especially when you want to use the breakout board)
-  * Cost +/- €7
-  * [Amazon.de](https://www.amazon.de/-/en/SC0915-Raspberry-Pi-Pico/dp/B09KVB8LVR/ref=pd_ybh_a_d_sccl_16/260-4953542-4044665?pd_rd_w=GlHov&content-id=amzn1.sym.ad3cb1b1-7625-484d-ab4b-854fbcbac3d9&pf_rd_p=ad3cb1b1-7625-484d-ab4b-854fbcbac3d9&pf_rd_r=QXFAX8GKT7BTAACVMCT7&pd_rd_wg=0fWLD&pd_rd_r=348e6ed1-d75b-4076-8599-72424117d2bf&pd_rd_i=B09KVB8LVR&psc=1)
-* Breakout board (**Optional**)
-  * Simplifies making connections with the screw terminal by eliminating the need for soldering. **Highly recommend!** 
-  * Cost +/- €5
-  * [Amazon.de](https://www.amazon.de/-/en/Expansion-Interface-Dual-Core-Processor-Compatible/dp/B0CPY6F9FF/ref=pd_ybh_a_d_sccl_15/260-4953542-4044665?pd_rd_w=qmCUT&content-id=amzn1.sym.ad3cb1b1-7625-484d-ab4b-854fbcbac3d9&pf_rd_p=ad3cb1b1-7625-484d-ab4b-854fbcbac3d9&pf_rd_r=JS7GRGTH5J8F42P2EXBT&pd_rd_wg=vSN8e&pd_rd_r=a6b43f20-b7ba-451c-a03f-533db4138cc3&pd_rd_i=B0CPY6F9FF&psc=1)
-* Buttons 
-  * In my example I use standard arcade buttons but can work with any switches e.g. micro switches you embed in your product
-* Wires, terminals,...
+| Item                          | Notes                                          | Price     |
+| ----------------------------- | ---------------------------------------------- | --------- |
+| **Raspberry Pi Pico (RP2040)** | Buy official; with headers if possible         | ~€7       |
+| **Breakout board** (optional)  | Simplifies connections, highly recommended     | ~€5       |
+| **Buttons**                    | Any buttons or micro switches                  | Varies    |
+| **Wires, terminals**           | Various connections for buttons                | Varies    |
+
+- [Raspberry Pi Pico - Amazon.de](https://www.amazon.de/-/en/SC0915-Raspberry-Pi-Pico/dp/B09KVB8LVR/)
+- [Breakout board - Amazon.de](https://www.amazon.de/-/en/Expansion-Interface-Dual-Core-Processor-Compatible/dp/B0CPY6F9FF/)
 
 
 ---
