@@ -4,11 +4,23 @@ This guide will show you how to transform a Raspberry Pi Pico into a custom game
 
 **Keep in mind the controller only works with Nintendo switch in docked mode!**
 
+
+## Updates
+
+### 13/11/2024
+
+* Added example to use a joystick module
+
+### 21/10/2024
+
+* Initial release
+
+
 ## Video
 
   There is a step by step youtube video available at [https://www.youtube.com/watch?v=Jl17h7Sx4sw](https://www.youtube.com/watch?v=Jl17h7Sx4sw)
 
-![Firmware](img/youtube_screenshot.jpg)
+![YT](img/youtube_screenshot.jpg)
 
 ## Key Benefits
 
@@ -159,6 +171,122 @@ Simply connect the wires to the headers and screw them down.
 With this setup, you’ll have a fully functional Nintendo Switch controller that you can easily customize to fit your needs!
 
 
+---
+
+
+## Joystick module
+
+It is also possible to use PlayStation-style mini joystick controllers. This section explains how to add them.
+
+An example of these kind of modules is seen below
+
+![Joystick PCB](img/joystick/joystick_pcb.jpg){: width="50%"}
+
+
+## Video
+
+  There is a step by step youtube video available at [https://www.youtube.com/watch?v=DGvlZDRiA8w](https://www.youtube.com/watch?v=DGvlZDRiA8w)
+
+![YT](img/joystick/youtube.png)
+
+
+## Wiring the Analog Joystick Axes
+
+For this example, we’ll wire the analog axes of a PlayStation-style mini joystick:
+
+- **X-Axis (Left/Right Movement)**
+- **Y-Axis (Up/Down Movement)**
+
+Both axes are analog, so they need to be connected to analog-capable pins on the microcontroller.
+
+### Pins Overview
+
+| Component         | Wire 1 | 
+| ----------------- | ------ | 
+| X-Axis (Left/Right) | 26   |
+| Y-Axis (Up/Down)    | 27   |
+| GND   | GND   |
+| 5V    | 3V3    |
 
 
 
+#### Notes:
+
+- The PCB is marked for **5V**, but the **Pico** operates with a **3.3V** signal. Be sure to connect it to the **3.3V pin** to prevent any abnormal readings.  This is because the GPIO pins for the RP2040 utilize 3.3V logic and are not 5V-safe.
+
+- The **X-Axis** and **Y-Axis** are **analog inputs** and should be connected to **analog-capable pins** (ADC pins), such as **GP26**, **GP27**, **GP28**, or **GP29**.
+
+
+![Joystick PCB](img/joystick/scheme.png)
+
+### Enter Configuration Mode
+
+- **Unplug** the device.
+- **Hold the S2 button** and plug the Pico back into the USB port.
+- Open your browser and navigate to [http://192.168.7.1](http://192.168.7.1).
+
+
+### Enable the Analog addon
+
+1) Go to **Configuration** (1) menu
+2) Select **Add-Ons configuration**
+
+![Step 1 - Add-on configuration](img//joystick/step1.png)
+
+
+In the analog addons tab
+
+1) **Enable** the addon
+2) In **Analog Stick 1 X Pin** set the dropdown value to 26 (pin)
+3) In **Analog Stick 1 Y Pin** set the dropdown value to 27 (pin)
+4) Enable **Force circulation**
+5) Enable **Autocalibration**
+6) Enable **Analog smoothing**
+
+![Step 2 - Add-on configuration](img//joystick/step2.png)
+
+Very important to save the changes, scroll down to the bottom and click the **Save** (1) button
+
+![Step 3 - Add-on configuration](img//joystick/step3.png)
+
+Press **Save**, and then click **Reboot**.
+
+
+![Step 4 - Save and Reboot](img/config/step3.jpg)
+
+Click **Console** to test the configuration.
+
+![Step 5 - Console Mode](img/config/step4.jpg)
+
+---
+
+### Problems
+
+#### My joystick is inverted
+
+You can invert the direction of the Joystick in the configuration menu by selecting the Axis you want to invert in the dropdown in the **Analog Stick 1 Invert** settings.
+
+![Invert configuration](img//joystick/invert.png)
+
+#### I want a second joystick
+
+You can enable a second joystick by following the same connections as the first joystick, but use one of the other ADC pins, such as **GP28** or **GP29**.
+
+Follow the same configuration steps as for Joystick 1, but make sure to configure the **Analog Stick 2** fields accordingly.
+
+
+### Analog Joystick Settings
+
+- **Invert Axis**: Choose if you want to flip the **X** or **Y** axis of **Analog Joystick 2** (or both).
+- **Deadzone Size (%)**: Set the percentage for the **dead zone**. This is the area around the center where small movements won't be detected, preventing accidental input.
+- **Forced Circularity**: Constrain the analog joysticks to move within a perfect circle. This can be useful for some games, but may cause issues in games that expect the sticks to move outside of the circle.
+- **Auto Calibration**: Automatically re-centers the analog joysticks. It reads the joystick's center position when the device is powered on and adjusts accordingly to correct any drift until the next power cycle. This is useful for joysticks that experience drift over time.
+- **Error rate**: You can change or experiment with the error rate to modify the accuracy if the default is not ok.
+
+
+### 3D print alternative caps
+
+
+You can easily use other caps than the PS2 controller for example here is a longer version
+
+![Step 5 - Console Mode](img/joystick/joystick.png)
